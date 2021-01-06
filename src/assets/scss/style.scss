@@ -6,6 +6,7 @@
  */
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap");
+@import "colorVariables";
 @import "functions";
 @import "variables";
 @import "mixins";
@@ -103,7 +104,7 @@ section {
     width: 100%;
 }
 
-.img-contain{
+.img-contain {
     object-fit: contain;
     height: 100%;
     width: 100%;
@@ -112,10 +113,11 @@ section {
 .card {
     &.bordered {
         border: 1px solid $gray-200;
-      }
-      border-radius: 15px;
+    }
 
-    .tag{
+    border-radius: 15px;
+
+    .tag {
         z-index: 3;
         font-size: 0.875rem;
         background-color: $pink;
@@ -126,40 +128,44 @@ section {
         color: $white;
         min-height: 30px;
         border-radius: 0 15px;
-        span{
+
+        span {
             font-weight: 300;
         }
     }
 
-    .img-wrapper{
+    .img-wrapper {
         height: 100%;
         margin-bottom: 0;
         border-radius: 0.9375rem;
         overflow: hidden;
     }
 
-    .meta-wrapper{
+    .meta-wrapper {
         margin-top: 1rem;
-        h5{
+
+        h5 {
             font-size: 1.125rem;
             margin-bottom: 2px;
         }
-        span{
+
+        span {
             font-size: .875rem;
         }
     }
 
-    &.card-featured{
+    &.card-featured {
         overflow: hidden;
         cursor: pointer;
         height: 100%;
         border-radius: 15px;
-        &:after{
+
+        &:after {
             position: absolute;
             content: "";
             top: 0;
             left: 0;
-            right:0 ;
+            right: 0;
             bottom: 0;
             transform: scale(1.1);
             transition: .5s transform ease-in-out;
@@ -167,7 +173,7 @@ section {
             @include gradient-y(rgba($black, 0), rgba($black, 0.51), 0%, 100%);
         }
 
-        .img-wrapper{
+        .img-wrapper {
             z-index: 1;
             margin: 0;
             position: absolute;
@@ -180,7 +186,7 @@ section {
             border-radius: 15px;
         }
 
-        .meta-wrapper{
+        .meta-wrapper {
             z-index: 4;
             color: $white;
             padding: 20px;
@@ -196,14 +202,16 @@ section {
 
         }
 
-        &:hover{
-            .meta-wrapper{
+        &:hover {
+            .meta-wrapper {
                 transform: translateY(-10px);
             }
-            &:after{
+
+            &:after {
                 transform: scale(1);
             }
-            .img-wrapper{
+
+            .img-wrapper {
                 transform: scale(1);
             }
         }
@@ -211,4 +219,44 @@ section {
 }
 
 
+
+//testimonial
+.testimonial-hero,
+.testimonial-hero img {
+    width: 365px;
+    height: 500px;
+}
+
+//footer
+footer {
+    border-top: 1px solid $gray-200;
+    padding-top: 50px;
+
+    .brand-tagline {
+        margin-top: 8px;
+        color: $gray-500;
+        font-weight: 300;
+    }
+
+    .list-group-item {
+        padding: 0.3125rem 0;
+        border: 0;
+        a,
+        span {
+            color: $gray-500;
+            font-weight: 300;
+        }
+        a {
+            @include hover-focus {
+                color: $gray-800;
+            }
+        }
+    }
+
+    .copyrights {
+        margin: 50px 0;
+        font-weight: 300;
+        color: $gray-500;
+    }
+}
 
