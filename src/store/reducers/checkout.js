@@ -10,4 +10,3 @@ export default function checkout(state = initialState, action) {
       return state;
   }
 }
-

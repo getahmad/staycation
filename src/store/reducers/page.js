@@ -9,6 +9,7 @@ export default function page(state = initialState, action) {
         ...state,
         ...action.payload,
       };
+
     default:
       return state;
   }

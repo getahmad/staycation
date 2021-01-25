@@ -8,15 +8,19 @@ export default function FeaturedImage({ data }) {
         {data.map((item, index) => {
           return (
             <div
-              key={`FeaturedImage=${index}`}
+              key={`FeaturedImage-${index}`}
               className={`item ${index > 0 ? "column-5" : "column-7"} ${
                 index > 0 ? "row-1" : "row-2"
               }`}
             >
-              <Fade bottom detay={300 * index}>
+              <Fade bottom delay={300 * index}>
                 <div className="card h-100">
                   <figure className="img-wrapper">
-                    <img src={item.url} alt={item.id} className="img-cover" />
+                    <img
+                      className="img-cover"
+                      src={`${process.env.REACT_APP_HOST}/${item.imageUrl}`}
+                      alt={item._id}
+                    />
                   </figure>
                 </div>
               </Fade>
